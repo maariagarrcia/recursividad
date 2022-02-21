@@ -1,5 +1,5 @@
 ###  I  M P O R T S
-from colorama import Fore
+from colorama import *
 
 
 #
