@@ -39,16 +39,16 @@ def busqueda_dicotomica():
     mostrar_resultado("Posición del 'Uno'", mi_lista.dichotomic_index("Uno"))
 
 def palindromos():
-
-    # ParseStr es un nuevo tipo de cadena que incluye normalización y test de palíndromo
-
     # Ejemplo 1
     mi_cadena = ParseStr("Hola esto es una prueba")
     print("Frase de prueba 1 (" + str(len(mi_cadena)) + ") " +
           Fore.YELLOW + mi_cadena + Fore.WHITE)
     mostrar_resultado("Frase normalizada (" +
                       str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
-    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
+    mostrar_resultado("Es palindromo (iterativo)",
+                      mi_cadena.is_palindrome_iterative())
+    mostrar_resultado("Es palindromo (recursivo)",
+                      mi_cadena.is_palindrome_recursive())
     print()
 
     # Ejemplo 2
@@ -57,7 +57,10 @@ def palindromos():
           Fore.YELLOW + mi_cadena + Fore.WHITE)
     mostrar_resultado("Frase normalizada (" +
                       str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
-    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
+    mostrar_resultado("Es palindromo (iterativo",
+                      mi_cadena.is_palindrome_iterative())
+    mostrar_resultado("Es palindromo (recursivo)",
+                      mi_cadena.is_palindrome_recursive())
     print()
 
     # Ejemplo 3
@@ -66,7 +69,12 @@ def palindromos():
           Fore.YELLOW + mi_cadena + Fore.WHITE)
     mostrar_resultado("Frase normalizada (" +
                       str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
-    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
+    mostrar_resultado("Es palindromo (iterativo)",
+                      mi_cadena.is_palindrome_iterative())
+    mostrar_resultado("Es palindromo (recursivo)",
+                      mi_cadena.is_palindrome_recursive())
+
+                      
 #
 #   I N I C I O   P R O G R A M A
 #
