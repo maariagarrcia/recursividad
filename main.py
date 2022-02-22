@@ -37,7 +37,7 @@ def busqueda_dicotomica():
     mostrar_resultado("Posición del 'Diez'", mi_lista.dichotomic_index("Diez"))
     mostrar_resultado("Posición del 'Uno'", mi_lista.dichotomic_index("Uno"))
 
-
+def palindromos():
 #
 #   I N I C I O   P R O G R A M A
 #
@@ -46,5 +46,6 @@ helpers.clear()  # Limpia la terminal
 
 mi_menu = Menu("TAREAS RECURSIVIDAD")
 mi_menu.addOption("Búsqueda dicotómica recursiva", busqueda_dicotomica)
+mi_menu.addOption("Palíndromos", palindromos)
 
 mi_menu.start()
