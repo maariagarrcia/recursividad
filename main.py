@@ -3,6 +3,7 @@ from colorama import *
 from sortedlist_class import *
 import helpers
 from menu_class import *
+from parsestr_class import *
 
 #
 #   F U N C I O N E S
@@ -38,6 +39,34 @@ def busqueda_dicotomica():
     mostrar_resultado("Posición del 'Uno'", mi_lista.dichotomic_index("Uno"))
 
 def palindromos():
+
+    # ParseStr es un nuevo tipo de cadena que incluye normalización y test de palíndromo
+
+    # Ejemplo 1
+    mi_cadena = ParseStr("Hola esto es una prueba")
+    print("Frase de prueba 1 (" + str(len(mi_cadena)) + ") " +
+          Fore.YELLOW + mi_cadena + Fore.WHITE)
+    mostrar_resultado("Frase normalizada (" +
+                      str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
+    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
+    print()
+
+    # Ejemplo 2
+    mi_cadena = ParseStr("Logré ver gol")
+    print("Frase de prueba 2 (" + str(len(mi_cadena)) + ") " +
+          Fore.YELLOW + mi_cadena + Fore.WHITE)
+    mostrar_resultado("Frase normalizada (" +
+                      str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
+    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
+    print()
+
+    # Ejemplo 3
+    mi_cadena = ParseStr("Dábale arroz a la zorra el abad")
+    print("Frase de prueba 3 (" + str(len(mi_cadena)) + ") " +
+          Fore.YELLOW + mi_cadena + Fore.WHITE)
+    mostrar_resultado("Frase normalizada (" +
+                      str(len(mi_cadena.normalized_str)) + ") ",  mi_cadena.normalized_str)
+    mostrar_resultado("Es palindromo", mi_cadena.is_palindrome())
 #
 #   I N I C I O   P R O G R A M A
 #
