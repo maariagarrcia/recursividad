@@ -1,4 +1,4 @@
-# recursividad
+# Recursividad
 
 El enlace de este repositorio es:
 https://github.com/maariagarrcia/recursividad
