@@ -1,8 +1,7 @@
-###  I  M P O R T S
+### I M P O R T S
 from colorama import *
-from sortedlist_class import *
-import helpers
 from menu_class import *
+from sortedlist_class import *
 from parsestr_class import *
 from dijkstraflag_class import *
 
@@ -10,13 +9,14 @@ from dijkstraflag_class import *
 #   F U N C I O N E S
 #
 
+
 def mostrar_resultado(descripcion, resultado):
     print(Fore.WHITE + "> " + descripcion + Fore.YELLOW, resultado, Fore.WHITE)
 
 
 
-def busqueda_dicotomica():   
-    #Creamos una lista vacia de la nueva clase que incorpora la búsqueda dicotómica
+def busqueda_dicotomica():
+    # Creamos una lista vacia de la nueva clase que incorpora la búsqueda dicotómica
     mi_lista = SortedList()
 
     # Añadimos elementos de ejemplo a la lista
@@ -38,6 +38,7 @@ def busqueda_dicotomica():
     mostrar_resultado("Posición del 'Dos'", mi_lista.dichotomic_index("Dos"))
     mostrar_resultado("Posición del 'Diez'", mi_lista.dichotomic_index("Diez"))
     mostrar_resultado("Posición del 'Uno'", mi_lista.dichotomic_index("Uno"))
+
 
 def palindromos():
     # Ejemplo 1
@@ -75,43 +76,54 @@ def palindromos():
     mostrar_resultado("Es palindromo (recursivo)",
                       mi_cadena.is_palindrome_recursive())
 
+
+def create_flag(flag):
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.RED)
+
+
 def dijkstra_flag():
-    flag = DijkstraFlag()
-
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.RED)
-    flag.add_color(Color.GREEN)
-    flag.add_color(Color.RED)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.GREEN)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.RED)
-    flag.add_color(Color.RED)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.BLUE)
-    flag.add_color(Color.GREEN)
-    flag.add_color(Color.RED)
-
+    # Ejemplo con ordenación iterativa
+    flag_1 = DijkstraFlag()
+    create_flag(flag_1)
     mostrar_resultado(
-        "Bandera sin ordenar (" + str(len(flag)) + ")", flag.get_flag_str())
-
-    flag.sort(True)
-
+        "Bandera sin ordenar (" + str(len(flag_1)) + ")", flag_1.get_flag_str())
+    flag_1.sort_iterative(True)
     mostrar_resultado(
-        "Bandera ordenada        ", flag.get_flag_str())
+        "Ordenada iterativamente ", flag_1.get_flag_str())
+    print()
 
+    # Ejemplo con ordenación recursiva
+    flag_2 = DijkstraFlag()
+    create_flag(flag_2)
+    mostrar_resultado(
+        "Bandera sin ordenar (" + str(len(flag_2)) + ")", flag_2.get_flag_str())
+    flag_2.sort_recursive(True)
+    mostrar_resultado(
+        "Ordenada recursivamente ", flag_2.get_flag_str())
 
 
 #
-#   I N I C I O   P R O G R A M A
+#   I N I C I O    P R O G R A M A
 #
-
 helpers.clear()  # Limpia la terminal
 
 mi_menu = Menu("TAREAS RECURSIVIDAD")
 mi_menu.addOption("Búsqueda dicotómica recursiva", busqueda_dicotomica)
 mi_menu.addOption("Palíndromos", palindromos)
+mi_menu.addOption("Bandera de Dijkstra: Ordenación", dijkstra_flag)
 
 mi_menu.start()
