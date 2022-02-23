@@ -4,6 +4,7 @@ from sortedlist_class import *
 import helpers
 from menu_class import *
 from parsestr_class import *
+from dijkstraflag_class import *
 
 #
 #   F U N C I O N E S
@@ -74,7 +75,35 @@ def palindromos():
     mostrar_resultado("Es palindromo (recursivo)",
                       mi_cadena.is_palindrome_recursive())
 
-                      
+def dijkstra_flag():
+    flag = DijkstraFlag()
+
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.RED)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.BLUE)
+    flag.add_color(Color.GREEN)
+    flag.add_color(Color.RED)
+
+    mostrar_resultado(
+        "Bandera sin ordenar (" + str(len(flag)) + ")", flag.get_flag_str())
+
+    flag.sort(True)
+
+    mostrar_resultado(
+        "Bandera ordenada        ", flag.get_flag_str())
+
+
+
 #
 #   I N I C I O   P R O G R A M A
 #
